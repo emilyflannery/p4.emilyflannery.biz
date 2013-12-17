@@ -1,0 +1,450 @@
+/*--------------------------------------------------------------------
+CSS RESET
+---------------------------------------------------------------------*/
+/* line 4, ../sass/screen.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+  *height: auto;
+  margin: 0px;
+  padding: 0px;
+  min-width: 1000px;
+}
+
+/* line 25, ../sass/screen.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1em;
+  font: inherit;
+  line-height: 1em;
+  vertical-align: baseline;
+  *vertical-align: text-top;
+}
+
+/*--------------------------------------------------------------------
+VARIABLES
+---------------------------------------------------------------------*/
+/*--------------------------------------------------------------------
+GLOBAL
+---------------------------------------------------------------------*/
+/* line 47, ../sass/screen.scss */
+body {
+  font-family: "Asap", sans-serif;
+  background: #efefef;
+}
+
+/* line 52, ../sass/screen.scss */
+h2 {
+  border-bottom: 1px solid black;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 64, ../sass/screen.scss */
+h3 {
+  color: black;
+  font-family: "Playfair Display", serif;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 2em;
+  padding-bottom: .8em;
+  text-shadow: 1px 1px 2px white;
+}
+
+/* line 74, ../sass/screen.scss */
+h4 {
+  color: #5acd23;
+  font-size: .66em;
+  font-family: "Asap", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: .2em;
+  line-height: 2em;
+  margin: 1em auto;
+  text-align: left;
+  text-shadow: 1px 1px 1px white;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* line 88, ../sass/screen.scss */
+h4 a {
+  color: #5acd23;
+  text-decoration: none;
+}
+
+/* line 93, ../sass/screen.scss */
+h5 {
+  color: black;
+  font-family: "Asap", Helvetica, Arial, sans-serif;
+  font-size: .8em;
+  font-weight: 500;
+  line-height: 2em;
+  margin: 1em auto 4em auto;
+  text-align: center;
+  text-shadow: 1px 1px 1px white;
+  width: auto;
+}
+
+/* line 105, ../sass/screen.scss */
+h5 a {
+  border: 1px solid #cecece;
+  color: black;
+  text-decoration: none;
+  padding: 0.5em 0.8em;
+}
+/* line 111, ../sass/screen.scss */
+h5 a:hover {
+  background: #5acd23;
+}
+
+/* line 116, ../sass/screen.scss */
+a {
+  color: #23a3cd;
+}
+
+/* line 120, ../sass/screen.scss */
+form {
+  font-family: "Asap", sans-serif;
+  font-size: 1em;
+  text-align: center;
+  margin-top: 3em;
+}
+
+/* line 128, ../sass/screen.scss */
+form input,
+form textarea {
+  background: none;
+  border: none;
+  border-bottom: 1px dotted black;
+  color: #aaa;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0 0 2em 0;
+  padding-bottom: .5em;
+  width: 100%;
+}
+
+/* line 140, ../sass/screen.scss */
+form input:focus {
+  outline: none;
+}
+
+/* line 144, ../sass/screen.scss */
+.left {
+  float: left;
+}
+
+/* line 148, ../sass/screen.scss */
+.right {
+  float: right;
+}
+
+/* line 152, ../sass/screen.scss */
+.button {
+  border-radius: 5em;
+  background: #5acd23;
+  border-radius: 5em;
+  display: block;
+  font-family: "Asap", serif;
+  letter-spacing: 0;
+  list-style: none;
+  margin: 2em auto;
+  text-align: center;
+  text-transform: uppercase;
+  width: 5em;
+  height: 5em;
+}
+
+/* line 167, ../sass/screen.scss */
+.button input {
+  border: none;
+  color: black;
+  display: block;
+  font-size: .8em;
+  font-weight: 700;
+  line-height: 1.6em;
+  margin: 0 auto;
+  padding: .8em;
+  position: relative;
+  top: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* line 183, ../sass/screen.scss */
+.button a {
+  border: none;
+  color: black;
+  font-size: .8em;
+  font-weight: 700;
+  line-height: 1.6em;
+  padding: .8em;
+  position: relative;
+  top: 2.3em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* line 198, ../sass/screen.scss */
+.avatar {
+  background: url("/uploads/avatars/user_default.jpg") center center no-repeat;
+  border-radius: 70px;
+  display: block;
+  margin: 0 auto 1em auto;
+  max-width: 70px;
+  width: 70px;
+  height: 70px;
+}
+
+/* line 208, ../sass/screen.scss */
+#logo {
+  display: block;
+  height: auto;
+  margin: 4em auto 0 auto;
+  padding: 0.5em;
+  text-align: center;
+  width: 40%;
+}
+
+/* line 217, ../sass/screen.scss */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 222, ../sass/screen.scss */
+nav ul {
+  padding: 1em;
+}
+/* line 225, ../sass/screen.scss */
+nav ul li {
+  color: #efefef;
+  background: #111;
+  border-radius: 5em;
+  font-family: "Asap", serif;
+  font-size: .7em;
+  list-style: none;
+  margin: .5em;
+  padding: .8em;
+  text-align: center;
+  text-transform: uppercase;
+  width: 5em;
+  height: 5em;
+}
+/* line 239, ../sass/screen.scss */
+nav ul li:hover {
+  background: #5acd23;
+}
+/* line 242, ../sass/screen.scss */
+nav ul li:hover a {
+  color: #111;
+}
+/* line 248, ../sass/screen.scss */
+nav ul li a:link,
+nav ul li a:visited {
+  color: #efefef;
+  line-height: 1.5em;
+  position: relative;
+  top: 1.7em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+}
+/* line 258, ../sass/screen.scss */
+nav ul li a:hover {
+  color: #111;
+}
+
+/* line 265, ../sass/screen.scss */
+.content {
+  background: #efefef;
+  color: #111;
+  margin: 5em auto 0 auto;
+  padding-bottom: 6em;
+  width: 40%;
+}
+
+/*--------------------------------------------------------------------
+LOGIN
+---------------------------------------------------------------------*/
+/* line 276, ../sass/screen.scss */
+.content.login {
+  margin-top: 2em;
+}
+/* line 279, ../sass/screen.scss */
+.content.login .message {
+  font-size: 1em;
+  padding: 1em 0;
+}
+
+/* line 286, ../sass/screen.scss */
+.error {
+  color: red;
+}
+
+/* line 290, ../sass/screen.scss */
+.success {
+  color: #5acd23;
+}
+
+/*--------------------------------------------------------------------
+INDEX
+---------------------------------------------------------------------*/
+/* line 298, ../sass/screen.scss */
+.content.member,
+.content.visitor {
+  margin: 2em auto;
+}
+
+/* line 302, ../sass/screen.scss */
+.member h2 {
+  border: none;
+  font-family: "Playfair Display", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0em;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  text-transform: none;
+  width: auto;
+}
+
+/* line 316, ../sass/screen.scss */
+.visitor h2 {
+  border-bottom: none;
+  padding: 0;
+}
+
+/* line 321, ../sass/screen.scss */
+#welcome {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 2.6em;
+  letter-spacing: 0;
+  margin: 1em auto 1em -10%;
+  padding: 0.8em 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 120%;
+}
+
+/* line 334, ../sass/screen.scss */
+.visitor #welcome {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+/*--------------------------------------------------------------------
+PROMPTS
+---------------------------------------------------------------------*/
+/* line 342, ../sass/screen.scss */
+.prompt {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------------
+PROFILE
+---------------------------------------------------------------------*/
+/* line 351, ../sass/screen.scss */
+.profile h3 {
+  text-align: center;
+}
+/* line 355, ../sass/screen.scss */
+.profile h4 {
+  margin-top: 2em;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------------
+POSTS
+---------------------------------------------------------------------*/
+/* line 364, ../sass/screen.scss */
+.new-post textarea {
+  background: #fff;
+  border: 1px dotted #cdcdcd;
+  padding: 1em;
+  margin: 0 auto;
+  min-height: 200px;
+  width: 92%;
+}
+
+/*--------------------------------------------------------------------
+POSTS
+---------------------------------------------------------------------*/
+/* line 379, ../sass/screen.scss */
+.posts article {
+  border-bottom: 1px dotted #cdcdcd;
+  margin: 1.5em 0 0 0;
+  padding-bottom: 2em;
+}
+/* line 385, ../sass/screen.scss */
+.posts p {
+  background: #fff;
+  border: 1px dotted #cdcdcd;
+  font-family: "Cutive Mono", serif;
+  font-size: .8em;
+  padding: 1em;
+}
+/* line 393, ../sass/screen.scss */
+.posts .meta {
+  background: none;
+  border: none;
+}
+
+/* line 400, ../sass/screen.scss */
+footer {
+  background: #111;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+/* line 407, ../sass/screen.scss */
+footer img {
+  height: auto;
+  padding: 0.5em;
+  width: 15em;
+}
+
+/*--------------------------------------------------------------------
+FOLLOW
+---------------------------------------------------------------------*/
+/* line 419, ../sass/screen.scss */
+.follow article {
+  border-bottom: 1px dotted #cdcdcd;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+/* line 426, ../sass/screen.scss */
+.follow h4 {
+  margin-top: .5em;
+  text-align: center;
+}

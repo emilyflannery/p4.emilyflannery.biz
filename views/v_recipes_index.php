@@ -1,5 +1,5 @@
 <section class="content posts">
-	<h2>Blogroll</h2>
+	<h2>All Recipes</h2>
 	<h4 class="prompt"><a href="/posts/users" title="Follow Users">Click here to see what other users are up to!</a></h4>
 
 		<?php foreach($recipes as $recipe): ?>

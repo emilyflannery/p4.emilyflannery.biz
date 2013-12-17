@@ -86,12 +86,24 @@ class posts_controller extends base_controller {
 	        WHERE 		user_recipes.recipe_id = ".$this->recipe->recipe_id;
 
 	    # Run the query, store the results in the variable $posts
-	    $posts = DB::instance(DB_NAME)->select_rows($q);
+	    $recipes = DB::instance(DB_NAME)->select_rows($q);
 
-	    # Pass data to the View
-	    $this->template->content->recipes = $recipes;
+	    # Build the query to figure out what recipes did the user already save? 
+	    $q = "SELECT * 
+	        FROM user_recipes
+	        WHERE recipe_id = ".$this->recipes->recipe_id;
 
-	    # Render the View
+	    # Execute this query with the select_array method
+	    # select_array will return our results in an array and use the "users_id_followed" field as the index.
+	    # This will come in handy when we get to the view
+	    # Store our results (an array) in the variable $connections
+	    $connections = DB::instance(DB_NAME)->select_array($q, 'recipe_id');
+
+	    # Pass data (users and connections) to the view
+	    $this->template->content->users       = $users;
+	    $this->template->content->connections = $connections;
+
+	    # Render the view
 	    echo $this->template;
 
 	}

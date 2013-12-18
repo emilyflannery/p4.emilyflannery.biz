@@ -1,25 +1,17 @@
 <!-- Stream of other uses on app and ability ot follow and unfollow them -->
 
 <section class="content follow">
+	
 	<h2>My Recipes</h2>
 
-	<?php foreach($recipes as $recipe): ?>
+	<?php foreach($my_recipes as $my_recipe): ?>
 	<br />
 
 		<article>
 			<!-- Print this user's name -->
-	    <h3><?=$recipe['title']?></h2>
+	    <h3><?=$my_recipe['title']?></h3>
+	    <p><?=$my_recipe['description']?></p>
 
-	    <!-- If there exists a connection with this user, show a unfollow link -->
-	     <h4>
-	     	<?php if(isset($connections[$user['user_id']])): ?>
-	        	<a href='/recipes/remove/<?=$recipe['recipe_id']?>'>Remove from My Recipes</a>
-
-	    <!-- Otherwise, do nothing -->
-	    	<?php else: ?>
-	        	
-	    	<?php endif; ?>
-	    </h4>
 		</article>
 
 

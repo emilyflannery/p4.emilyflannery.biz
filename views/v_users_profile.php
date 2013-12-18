@@ -3,40 +3,32 @@
 	<section>
 
 	    <h2><?=$user->first_name;?>'s profile</h2>
-		
-		<div class="avatar" style="background: url('<?=$user->avatar;?>') center center no-repeat;"></div>
-	
-		<h3><?=$user->email;?></h3>
-		<h5><a href="/users/profile_edit">Update Profile</a></h5>
+			
+		<form method='POST' action='/users/p_profile_edit'>  <!-- Naming convention = /controller/post or method -->
 
-	</section>
-
-		<?php if($posts): ?>
-			<h4>My Posts:</h4>
-			<?php foreach($posts as $post): ?>
-
-					<!-- Get an array of posts from posts table, pass it to the view, and 
-					the view will loop through that and print out content for each post -->
-
-				<article>
-
-				    <p><?=$post['content']?></p>
-
-				    <p class="meta left"><time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
-				        <?=Time::display($post['created'])?>
-				    </meta>
-					</p>
-
-					<p class="meta right"><a href="/posts/delete/<?=$post['post_id']?>">Delete</a></p>
-
-				</article>
-
-			<?php endforeach; ?>
-
+		<?php if($avatar): ?>
+			<div class="avatar" style="background: url('<?=$user->avatar;?>') center center no-repeat;"></div>
 		<?php else: ?>
-			<h4><a href="/posts/add" title="Add a Post">You have no posts. Click here to add one!</a></h4>
+			<div class="avatar" style="background: url('/uploads/avatars/user_default.jpg') center center no-repeat;"></div>
 		<?php endif; ?>
 
+		<a href="#" id="first_name" data-type="text" data-pk="1" data-url="/users/p_profile_edit" data-title="">
+			<input type='text' name='first_name' placeholder='<?=$user->first_name;?>'><br />
+		</a>
+		<a href="#" id="last_name" data-type="text" data-pk="1" data-url="/users/p_profile_edit" data-title="">
+			<input type='text' name='last_name' placeholder='<?=$user->last_name;?>'><br />
+		</a>
+		<a href="#" id="email" data-type="text" data-pk="1" data-url="/users/p_profile_edit" data-title="">
+			<input type='text' name='email' placeholder='<?=$user->email;?>'><br /> <!-- Query database to be sure email doesn't already exist -->
+		</a>
+
+		<input type='password' name='password' placeholder='Password'><br />
+
+
+		
+		<div class="button"><input type='Submit' value='Save'></div>or <a href="/users/profile">Cancel</a>
+
+	</form>
 
 </section>
 

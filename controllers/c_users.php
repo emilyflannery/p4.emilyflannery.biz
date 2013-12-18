@@ -23,12 +23,6 @@ class users_controller extends base_controller {
 
     public function p_signup() {
 
-
-        // Store time user was created to DB
-        $_POST['created']   = Time::now();
-        $_POST['modified']   = Time::now();
-      
-
         // Encrypt the password  
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
 
@@ -49,7 +43,7 @@ class users_controller extends base_controller {
 
         // Add Image to DB in "avatar" column
         $data = Array("avatar" => $avatar);
-        DB::instance(DB_NAME)->update("users", $data, "WHERE user_id = '".$user_id."'"); 
+        DB::instance(DB_NAME)->update("users", $data, "WHERE users.id = '".$user_id."'"); 
 
 
         // Send them back to the login page with a success message
@@ -158,8 +152,8 @@ class users_controller extends base_controller {
 
             # Query
             $q = "SELECT *
-                FROM         posts 
-                WHERE        user_id = ".$this->user->user_id;
+            from         users 
+            WHERE        users.id = ".$this->user->id;
 
         # Run the query, store the results in the variable $posts
         $posts = DB::instance(DB_NAME)->select_rows($q);

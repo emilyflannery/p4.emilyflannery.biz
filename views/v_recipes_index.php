@@ -1,21 +1,34 @@
-<section class="content posts">
+<!-- Stream of other uses on app and ability ot follow and unfollow them -->
+
+<section class="content follow">
+	
 	<h2>All Recipes</h2>
-	<h4 class="prompt"><a href="/posts/users" title="Follow Users">Click here to see what other users are up to!</a></h4>
 
-		<?php foreach($recipes as $recipe): ?>
+	<?php foreach($recipes as $recipe): ?>
+	<br />
 
-				<!-- Get an array of posts from posts table, pass it to the view, and 
-				the view will loop through that and print out content for each post -->
+		<article>
+			<!-- Print this user's name -->
+	    <h3><?=$my_recipe['title']?></h3>
+	    <p><?=$my_recipe['description']?></p>
 
-			<article>
+	    <h4>
+	     	<?php if(isset($connections[$user['user_id']])): ?>
+	        	<a href='/posts/unfollow/<?=$user['user_id']?>'>Unfollow</a>
 
-			    <h3><span class="name"><?=$recipes['title']?></span>:</h3>
+	    <!-- Otherwise, show the follow link -->
+	    	<?php else: ?>
+	        	<a href='/posts/follow/<?=$user['user_id']?>'>Follow</a>
+	    	<?php endif; ?>
+	    </h4>
 
-			    <p><?=$recipes['description']?></p>
+		</article>
 
-			</article>
-			<br />
 
-		<?php endforeach; ?>
+	<?php endforeach ?>
 
 </section>
+
+
+
+

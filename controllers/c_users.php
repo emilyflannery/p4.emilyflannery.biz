@@ -54,7 +54,7 @@ class users_controller extends base_controller {
 
         // Add Image to DB in "avatar" column
         $data = Array("avatar" => $avatar);
-        DB::instance(DB_NAME)->update("users", $data, "WHERE users.id = '".$user_id."'"); 
+        DB::instance(DB_NAME)->update("users", $data, "WHERE users.id = '".$this->user->id."'"); 
 
 
         // Send them back to the login page with a success message
@@ -146,7 +146,7 @@ class users_controller extends base_controller {
     }
 
 
-    public function profile($user_name = NULL) {
+    public function profile($user_name = NULL, $duplicate = NULL) {
 
         # If user is blank, they're not logged in; redirect them to the login page
         if(!$this->user) {
@@ -172,13 +172,11 @@ class users_controller extends base_controller {
 
         # Pass data to the View
         $this->template->content->posts = $posts;
+        $this->template->content->duplicate = $duplicate;
 
         # Use load_client_files to generate the links from the above array
         $this->template->client_files_head = Utils::load_client_files($client_files_head);  
         
-        # Use load_client_files to generate the links from the above array
-        #$this->template->client_files_body = Utils::load_client_files($client_files_body);  
-
         # Pass information to the view fragment
         $this->template->content->user_name = $user_name;
 
@@ -188,25 +186,31 @@ class users_controller extends base_controller {
     }
 
 
-    public function profile_edit() {
-        // Set up the view
-        $this->template->content = View::instance('v_users_profile_edit');
-        $this->template->title   = "Edit Profile";
-
-        // Render the view
-        echo $this->template;
-
-    }
-
-
     public function p_profile_edit() {
 
+
+        //Check to see if the input email already exists in the database 
+        $duplicate = DB::instance(DB_NAME)->select_field("SELECT email FROM users WHERE email = '" . $_POST['email'] . "' AND email != '" . $this->user->email . "'");
+
+        //If email already exists 
+        if($duplicate){ 
+        
+        //Redirect to error page 
+        Router::redirect('/users/profile/?duplicate=true');
+        }
+
+
+        // Encrypt the password  
+        $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
+
+        // Create an encrypted token via their email address and a random string
+        $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string()); 
 
         $q = "UPDATE    users
             SET         first_name = '".$_REQUEST['first_name']."',
                         last_name = '".$_REQUEST['last_name']."',
                         email = '".$_REQUEST['email']."'
-            WHERE       email = '".$this->user->email."'";
+            WHERE       id = '".$this->user->id."'";
 
         DB::instance(DB_NAME)->query($q);
         Router::redirect("/users/profile");

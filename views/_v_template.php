@@ -7,12 +7,12 @@
 	
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
 
-	<!-- Bootstrap -->
+	<!-- Bootstrap 
 	<script src="/js/bootstrap.min.js"></script>
 
-	<!-- Bootstrap Editable -->
+	 Bootstrap Editable 
 	<link href="/stylesheets/bootstrap-editable.css" rel="stylesheet">
-	<script src="/js/bootstrap-editable.min.js"></script>
+	<script src="/js/bootstrap-editable.min.js"></script>-->
 	
 	<!-- Common CSS/JS -->
 	<link rel="stylesheet" href="/stylesheets/screen.css" type="text/css">

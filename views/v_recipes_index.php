@@ -1,3 +1,4 @@
+<!-- Stream of other uses on app and ability ot follow and unfollow them -->
 
 <section class="content recipes">
 	

@@ -44,9 +44,9 @@ class recipes_controller extends base_controller {
 	    $this->template->content = View::instance("v_recipes_index");
 	    $this->template->title   = "All Recipes";
 
-	    # Query 
+	    # Query -- HELP --
 	    $q = "SELECT *
-	    		FROM 		recipes";
+	    		FROM recipes";
 
 	    # Run the query, store the results in the variable $posts
 	    $all_recipes = DB::instance(DB_NAME)->select_rows($q);
@@ -54,8 +54,8 @@ class recipes_controller extends base_controller {
 	    # Build the query to figure out what connections does this user already have? 
 	    # I.e. who are they following
 	    $q = "SELECT * 
-	        FROM user_recipes
-	        WHERE user_id = ".$this->user->id;
+	        FROM 	user_recipes
+	        WHERE 	user_id = ".$this->user->id;
 
 	    # Execute this query with the select_array method
 	    # select_array will return our results in an array and use the "users_id_followed" field as the index.
@@ -76,9 +76,9 @@ class recipes_controller extends base_controller {
 
 		# Prepare the data array to be inserted
 		$data = Array(
-			"user_id" => $this->user->id,
-			"recipe_id" => recipe_id
-		);
+		    "user_id" => $this->user->id,
+		    "recipe_id" => $recipe_id
+		    );
 
 		# Do the insert
 		DB::instance(DB_NAME)->insert('user_recipes', $data);

@@ -23,6 +23,17 @@ class users_controller extends base_controller {
 
     public function p_signup() {
 
+        //Check to see if the input email already exists in the database 
+        $duplicate = DB::instance(DB_NAME)->select_field("SELECT email FROM users WHERE email = '" . $_POST['email'] . "'");
+        
+        //If email already exists 
+        if($duplicate){ 
+        
+        //Redirect to error page 
+        Router::redirect('/users/login/?duplicate=true');
+        }
+
+
         // Encrypt the password  
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
 
@@ -52,7 +63,7 @@ class users_controller extends base_controller {
         
     }
 
-    public function login($error = NULL, $success = NULL) {
+    public function login($error = NULL, $duplicate = NULL, $success = NULL) {
         
         # Setup view
         $this->template->content = View::instance('v_users_login');
@@ -60,6 +71,7 @@ class users_controller extends base_controller {
 
         # Pass data to the view
         $this->template->content->error = $error;
+        $this->template->content->duplicate = $duplicate;
         $this->template->content->success = $success;
 
         # Render template

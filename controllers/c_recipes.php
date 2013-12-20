@@ -44,7 +44,7 @@ class recipes_controller extends base_controller {
 	    $this->template->content = View::instance("v_recipes_index");
 	    $this->template->title   = "All Recipes";
 
-	    # Query -- HELP --
+	    # Query 
 	    $q = "SELECT *
 	    		FROM 		recipes";
 
@@ -76,9 +76,9 @@ class recipes_controller extends base_controller {
 
 		# Prepare the data array to be inserted
 		$data = Array(
-		    "user_id" => $this->user->id,
-		    "recipe_id" => $recipe_id
-		    );
+			"user_id" => $this->user->id,
+			"recipe_id" => recipe_id
+		);
 
 		# Do the insert
 		DB::instance(DB_NAME)->insert('user_recipes', $data);

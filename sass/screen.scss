@@ -358,43 +358,62 @@ PROFILE
     }
 }
 
-/*--------------------------------------------------------------------
-POSTS
----------------------------------------------------------------------*/
-.new-post textarea {
-  background: #fff;
-  border: 1px dotted #cdcdcd;
-  padding: 1em;
-  margin: 0 auto;
-  min-height: 200px;
-  width: 92%;
-}
+
 
 
 /*--------------------------------------------------------------------
-POSTS
+RECIPES
 ---------------------------------------------------------------------*/
-.posts {
+.recipes {
   
+    h3 {
+    text-align: center;
+    }
+
     article {
     border-bottom: 1px dotted #cdcdcd;
-    margin: 1.5em 0 0 0;
+    margin: 0;
     padding-bottom: 2em;
+    
+      .item {
+      background: #fff;
+      border: 1px dotted #cdcdcd;
+      font-family: 'Cutive Mono', serif;
+      font-size: .8em;
+      line-height: 1.3em;
+      padding: 1em;
+      
+        p {
+        font-family: 'Asap', Helvetica, Arial, sans-serif;
+        line-height: 1.6em;
+        padding-bottom: .8em;
+        }
+
+        ul {
+
+            li {
+            font-size: 1.1em;
+            line-height: 1.4em;
+            list-style: none;
+            }
+        }
+      }
+
+        h4 {
+        text-align: center;
+        }
+
     }
 
-    p {
-    background: #fff;
-    border: 1px dotted #cdcdcd;
-    font-family: 'Cutive Mono', serif;
-    font-size: .8em;
-    padding: 1em;
-    }
+    
 
     .meta {
     background: none;
     border: none;
+    text-align: center;
     }
 }
+
 
 
 footer {

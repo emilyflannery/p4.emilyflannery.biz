@@ -11,9 +11,15 @@
 		<input type='text' name='email' placeholder='Email Address'><br />
 		<input type='password' name='password' placeholder='Password'><br />
 
-		 <?php if(isset($_GET['error'])): ?>
+		<?php if(isset($_GET['error'])): ?>
 	        <div class='message error'>
 	            Login failed. Please double check your email and password.
+	        </div>
+	        <br>
+	    <?php endif; ?>
+	    <?php if(isset($_GET['duplicate'])): ?>
+	        <div class='message error'>
+	            An account already exists with this email address.
 	        </div>
 	        <br>
 	    <?php endif; ?>

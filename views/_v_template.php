@@ -4,17 +4,21 @@
 	<title><?php if(isset($title)) echo $title; ?></title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
 
+	<!-- Bootstrap -->
+	<script src="/js/bootstrap.min.js"></script>
+
+	<!-- Bootstrap Editable -->
+	<link href="/stylesheets/bootstrap-editable.css" rel="stylesheet">
+	<script src="/js/bootstrap-editable.min.js"></script>
+	
 	<!-- Common CSS/JS -->
 	<link rel="stylesheet" href="/stylesheets/screen.css" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Asap:400,700,700italic,400italic' rel='stylesheet' type='text/css'>	
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
-	
-	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	
-	
 					
 	<!-- Controller Specific JS/CSS -->
 	<?php if(isset($client_files_head)) echo $client_files_head; ?>
@@ -46,6 +50,7 @@
 	<?php if(isset($content)) echo $content; ?>
 
 	<footer>
+		<script src="/js/foodshare.js"></script>
 		<img src="/images/foodshare.png" />
 	</footer>
 

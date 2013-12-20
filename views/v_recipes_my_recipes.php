@@ -1,11 +1,12 @@
 <!-- Stream of other uses on app and ability ot follow and unfollow them -->
 
-<section class="content follow">
+<section class="content recipes">
 	
 	<h2>My Recipes</h2>
 
 	<?php foreach($my_recipes as $my_recipe): ?>
-	<br />
+	<h3 id="servings"><input type="text" value="4"></input>Servings</h3> 
+	<button>Recalculate</button>
 
 		<article>
 			<!-- Print this user's name -->

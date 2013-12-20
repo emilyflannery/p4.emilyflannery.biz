@@ -1,4 +1,4 @@
-<section class="content posts profile">
+<section class="content profile">
 
 	<section>
 

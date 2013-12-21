@@ -29,10 +29,23 @@ class recipes_controller extends base_controller {
 	    # Run the query, store the results in the variable $posts
 	    $my_recipes = DB::instance(DB_NAME)->select_rows($q);
 
-	    # Pass data (users and connections) to the view
-	    $this->template->content->my_recipes = $my_recipes;
+	    # Build the query to figure out what connections does this user already have? 
+	    # I.e. who are they following
+	    $q = "SELECT * 
+	        FROM 	user_recipes
+	        WHERE 	user_id = ".$this->user->id;
 
-	    # Render the view
+	    # Execute this query with the select_array method
+	    # select_array will return our results in an array and use the "users_id_followed" field as the index.
+	    # This will come in handy when we get to the view
+	    # Store our results (an array) in the variable $connections
+	    $connections = DB::instance(DB_NAME)->select_array($q, 'recipe_id');
+
+	    # Pass data (users and connections) to the view
+		$this->template->content->my_recipes = $my_recipes;
+		$this->template->content->connections = $connections;
+
+		# Render the view
 	    echo $this->template;
 
 	}

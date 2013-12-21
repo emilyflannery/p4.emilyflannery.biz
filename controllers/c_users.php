@@ -54,7 +54,7 @@ class users_controller extends base_controller {
 
         // Add Image to DB in "avatar" column
         $data = Array("avatar" => $avatar);
-        DB::instance(DB_NAME)->update("users", $data, "WHERE users.id = '".$this->user->id."'"); 
+        DB::instance(DB_NAME)->update("users", $data, "WHERE id = '".$user_id."'"); 
 
 
         // Send them back to the login page with a success message

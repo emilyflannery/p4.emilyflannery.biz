@@ -5,6 +5,8 @@
 	<h2>All Recipes</h2>
 
 	<?php foreach($all_recipes as $each_recipe): ?>
+
+	
 	<br />
 
 		
@@ -23,11 +25,11 @@
 			    </ul>
 			  </div>
 			  	<h4>
-			     	<?php if(isset($connections[$each_recipe['recipe_id']])): ?>
-			        	<a href='/recipes/remove/<?=$recipes['recipe_id']?>'>Remove</a>
+			     	<?php if(isset($connections[$each_recipe['id']])): ?>
+			        	<a href='/recipes/remove/<? echo $each_recipe['id']?>'>Remove</a>
 			    	<!-- Otherwise, show the follow link -->
 			    	<?php else: ?>
-			        	<a href='/recipes/add/<?=$each_recipes['recipe_id']?>'>Add to My Recipes</a>
+			        	<a href='/recipes/add/<? echo $each_recipe['id']?>'>Add to My Recipes</a>
 			    	<?php endif;  ?>
 			    </h4> 
 		</article>

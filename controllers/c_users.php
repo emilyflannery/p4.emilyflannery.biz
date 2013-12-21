@@ -28,11 +28,9 @@ class users_controller extends base_controller {
         
         //If email already exists 
         if($duplicate){ 
-        
         //Redirect to error page 
         Router::redirect('/users/login/?duplicate=true');
         }
-
 
         // Encrypt the password  
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
@@ -55,7 +53,6 @@ class users_controller extends base_controller {
         // Add Image to DB in "avatar" column
         $data = Array("avatar" => $avatar);
         DB::instance(DB_NAME)->update("users", $data, "WHERE id = '".$user_id."'"); 
-
 
         // Send them back to the login page with a success message
         Router::redirect("/users/login/?success=true"); 
@@ -98,6 +95,40 @@ class users_controller extends base_controller {
 
         # If we didn't find a matching token in the database, it means login failed
         if(!$token) {
+
+            # Send them back to the login page with an error message
+            Router::redirect("/users/login/?error=true"); 
+
+        # But if we did, login succeeded! 
+        } 
+        # Login passed
+        else {
+
+            /* 
+            Store this token in a cookie using setcookie()
+            Important Note: *Nothing* else can echo to the page before setcookie is called
+            Not even one single white space.
+            param 1 = name of the cookie
+            param 2 = the value of the cookie
+            param 3 = when to expire
+            param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
+            */
+            setcookie("token", $token, strtotime('+2 weeks'), '/');
+
+            # Send them to the main page - or whever you want them to go
+            Router::redirect("/");
+
+        }
+
+        // Check if email address is empty
+        $q = "SELECT    email 
+            FROM        users 
+            WHERE       email = '".$_POST['email']."' 
+            AND         password = '".$_POST['password']."'";
+
+        $email = DB::instance(DB_NAME)->select_field($q);
+
+        if(!$email) {
 
             # Send them back to the login page with an error message
             Router::redirect("/users/login/?error=true"); 

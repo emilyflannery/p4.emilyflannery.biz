@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
-
+	
 	<!-- Bootstrap 
 	<script src="/js/bootstrap.min.js"></script>
 
@@ -50,10 +50,14 @@
 	<?php if(isset($content)) echo $content; ?>
 
 	<footer>
-		<script src="/js/foodshare.js"></script>
 		<img src="/images/foodshare.png" />
 	</footer>
 
 	<?php if(isset($client_files_body)) echo $client_files_body; ?>
+	<!-- jQuery Form Validator -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.27/jquery.form-validator.min.js"></script>
+	<!-- Site JS -->
+	<script src="/js/foodshare.js"></script>
+
 </body>
 </html>

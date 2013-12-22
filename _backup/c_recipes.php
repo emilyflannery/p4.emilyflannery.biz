@@ -57,36 +57,12 @@ class recipes_controller extends base_controller {
 	    $this->template->content = View::instance("v_recipes_index");
 	    $this->template->title   = "All Recipes";
 
-
-
-
-
-		// First get all the rows from the recipes table
-		$q = "SELECT *	FROM recipes";
-		$all_recipes = DB::instance(DB_NAME)->select_rows($q);
-
-		// Then loop through the resulting array of recipes, and for each one, get the corresponding ingredients from the recipes_ingredients table, and join in the ingredient name from the ingredients table
-
-		foreach ($all_recipes as $key => $recipes) {
-			$q = "SELECT recipes_ingredients.quantity, recipes_ingredients.unit, recipes_ingredients.title
-				FROM recipes_ingredients
-				JOIN ingredients
-				ON recipes_ingredients.ingredient_id = ingredients.ingredient_id	
-				WHERE recipes_ingredients.recipe_id =".$recipes["id"];
-			$all_recipes[$key]["ingredients"] = DB::instance(DB_NAME)->select_rows($q);
-		}
-
-
-
-
-
-	    /*# Query -- HELP --
+	    # Query -- HELP --
 	    $q = "SELECT *
 	    		FROM recipes";
 
 	    # Run the query, store the results in the variable $posts
 	    $all_recipes = DB::instance(DB_NAME)->select_rows($q);
-	    */
 
 	    # Build the query to figure out what connections does this user already have? 
 	    # I.e. who are they following
@@ -106,9 +82,6 @@ class recipes_controller extends base_controller {
 
 	    # Render the view
 	    echo $this->template;
-	    #echo "<pre>";
-		#echo print_r($all_recipes);
-		#echo "</pre>";
 
 	}
 

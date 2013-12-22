@@ -1,0 +1,43 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.7
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 22, 2013 at 12:59 AM
+-- Server version: 5.5.29
+-- PHP Version: 5.4.10
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `emilyfla_p4_emilyflannery_biz`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `token` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `avatar` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `token`, `password`, `first_name`, `last_name`, `email`, `avatar`) VALUES
+(31, '73b6dca374e5c7875d1db2ea4566383eb1bf14e6', '0c9cbca43e347f0d52b60d8a266a52c090359b92', 'Emily', 'Flannery', 'emily@flannery.com', ''),
+(35, '381074272cd5d82d9fdfcbcf32608d8afb7426f6', 'f1c045a45295a8e5d9a75874d03009f6023a7cd5', 'Robert', 'Glass', 'robert@glass.com', '35.png'),
+(39, '6541f20f02add2346a1fac292899b77edea5db62', '2de725a72ebdacadff561062df48b3843dd4575f', '', '', '', '39'),
+(40, 'd31bab5fdc9cb56b8b05b39756071d44135d9be1', '2de725a72ebdacadff561062df48b3843dd4575f', '', '', '', '40'),
+(41, 'ae7d80d019cc7c2007c4557b3aab4999349ac335', '2de725a72ebdacadff561062df48b3843dd4575f', '', '', '', '41');

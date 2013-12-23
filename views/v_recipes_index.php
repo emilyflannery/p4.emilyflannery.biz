@@ -21,7 +21,7 @@
 		    <div class="details">
 			    <?php foreach($each_recipe['ingredients'] as $ingredient): ?> 
 					 <ul> 
-						 <li><span><?=$ingredient['quantity']?> <?=$ingredient['unit']?> <?=$ingredient['title']?></span></li> 
+						 <li><span class="ingredient"><?=$ingredient['quantity']?></span> <?=$ingredient['unit']?> <?=$ingredient['title']?></li> 
 					 </ul> 
 				<?php endforeach ?>
 			</div>

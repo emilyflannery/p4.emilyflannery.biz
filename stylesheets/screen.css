@@ -486,3 +486,14 @@ FOLLOW
   margin-top: .5em;
   text-align: center;
 }
+
+/*--------------------------------------------------------------------
+FORMS
+---------------------------------------------------------------------*/
+/* line 484, ../sass/screen.scss */
+.form-error {
+  color: red;
+  font-size: .9em;
+  line-height: 1.5em;
+  margin-bottom: .5em;
+}

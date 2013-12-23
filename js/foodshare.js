@@ -1,4 +1,4 @@
-// Ingredient Measurements
+	// Ingredient Measurements
 	var values = new Array();
 	var ingredient = $(".ingredient");
 
@@ -23,8 +23,15 @@
 	};
 
 
+	// Form Validation
 	$.validate({
 		form : '#signup',
+		validateOnBlur : true, // disable validation when input looses focus
+    	errorMessagePosition : 'top' // Instead of 'element' which is default
+	});
+
+	$.validate({
+		form : '#edit-profile',
 		validateOnBlur : true, // disable validation when input looses focus
     	errorMessagePosition : 'top' // Instead of 'element' which is default
 	});

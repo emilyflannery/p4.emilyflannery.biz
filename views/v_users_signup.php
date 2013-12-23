@@ -6,8 +6,6 @@
 
 	<form id="signup" method='POST' enctype="multipart/form-data" action='/users/p_signup'>  <!-- Naming convention = /controller/post or method -->
 
-		<input type='file' name='avatar' value='file'><br />
-
 		<input type='text' name='first_name' placeholder='First Name' data-validation="length" data-validation-length="min1" data-validation-error-msg="Please enter your first name"><br />
 		<input type='text' name='last_name' placeholder='Last Name' data-validation="length" data-validation-length="min1" data-validation-error-msg="Please enter your last name"><br />
 		<input type='text' name='email' placeholder="Email Address" data-validation="email" data-validation-error-msg="Please enter a valid email address"><br /> <!-- Query database to be sure email doesn't already exist -->

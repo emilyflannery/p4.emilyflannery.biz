@@ -37,8 +37,9 @@ time, mark, audio, video {
 /*--------------------------------------------------------------------
 VARIABLES
 ---------------------------------------------------------------------*/
-$black: #000;
-$green: #5acd23;
+$black: #2e322f;
+$white: #f2f2ec;
+$green: #62876c;
 
 
 /*--------------------------------------------------------------------
@@ -46,7 +47,7 @@ GLOBAL
 ---------------------------------------------------------------------*/
 body {
   font-family: 'Asap', sans-serif;
-  background: #efefef;
+  background: url('/images/bg.jpg') 0 0 repeat;
 }
 
 h2 {
@@ -109,12 +110,13 @@ h5 a {
   padding: .5em .8em;
 
     &:hover {
-    background: $green; 
+    border: 2px solid $green;
+    background: none; 
     }
 }
 
 a {
-  color: #23a3cd;
+  color: $green;
 }
 
 form {
@@ -166,7 +168,7 @@ form input:focus {
 
 .button input{
   border: none;
-  color: $black;
+  color: $white;
   display: block;
   font-size: .8em;
   font-weight: 700;
@@ -182,7 +184,7 @@ form input:focus {
 
 .button a {
   border: none;
-  color: $black;
+  color: $white;
   font-size: .8em;
   font-weight: 700;
   line-height: 1.6em;
@@ -211,62 +213,63 @@ form input:focus {
   margin: 4em auto 0 auto;
   padding: 0.5em;
   text-align: center;
-  width: 40%;
+  width: 35%;
 }
 
 nav {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 4em;
+  left: 2em;
 
     ul {
     padding: 1em;
     
       li {
       color: #efefef;
-      background: #111;
-      border-radius: 5em;
+      background: $green;
+      border: 4px solid $green;
       font-family: 'Asap', serif;
       font-size: .7em;
       list-style: none;
       margin: .5em;
-      padding: .8em;
-      text-align: center;
+      padding: 8px;
+      text-align: left;
       text-transform: uppercase;
-      width: 5em;
-      height: 5em;
+      height: 1em;
       
         &:hover {
-        background: $green;
+        background: none;
+        border: 4px solid $green;
+        color: $green;
         
           a {
-          color: #111;
+          color: $green;
+          font-weight: bold;
           }
         }
 
-        a:link, 
-        a:visited {
+        a,
+        a:link {
         color: #efefef;
-        line-height: 1.5em;
-        position: relative;
-        top: 1.7em;
         text-align: center;
         text-decoration: none;
         vertical-align: middle;
         }
 
         a:hover {
-        color: #111;
+        color: $green;
+        font-weight: bold;
         }
       }
     }
 }
 
 .content {
-  background: #efefef;
-  color: #111;
+  background: rgba(255, 255, 255, .5);
+  border-radius: 15px;
+  color: $black;
   margin: 5em auto 0 auto;
-  padding-bottom: 6em;
+  padding: 3em 6em;
   width: 40%;
 }
 
@@ -302,14 +305,14 @@ INDEX
 .member h2 {
   border: none;
   font-family: 'Playfair Display', Helvetica, Arial, sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 400;
   font-style: normal;
-  letter-spacing: 0em;
+  letter-spacing: .2em;
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  text-transform: none;
+  text-transform: lowercase;
   width: auto;
 }
 
@@ -323,8 +326,9 @@ INDEX
   border-bottom: 1px solid black;
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 2.6em;
+  font-size: 2.3em;
   letter-spacing: 0;
+  line-height: 1.3em;
   margin: 1em auto 1em -10%;
   padding: .8em 0;
   text-align: center;
@@ -368,6 +372,32 @@ RECIPES
   
     h3 {
     text-align: center;
+    }
+
+    .show, .hide {
+    background: $green;
+    border-radius: 5px;
+    color: $white;
+    float: left;
+    font-family: 'Asap', Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 0;
+    margin-top: 7px;
+    padding: 9px 5px 14px 5px;
+    position: absolute;
+    }
+
+    #servings {
+    font-size: .8em;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+      
+      input {
+      width: 3.5em;
+      margin-right: 1em;
+      padding: .5em;
+      }
     }
 
     article {
@@ -417,7 +447,7 @@ RECIPES
 
 
 footer {
-  background: #111;
+  background: $black;
   position: fixed;
   bottom: 0;
   left: 0;

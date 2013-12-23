@@ -10,19 +10,21 @@
 	
 	<article>
 
+		<span class="show">+</span>
+		<span class="hide">-</span>
 		<h3><?=$each_recipe['title']?></h3>
-		<h3 id="servings"><input type="text" value="4"></input>Servings</h3> 
-		<button>Recalculate</button>
-	
+		
 		<div class="item">
 			
 			<p><?=$each_recipe['description']?></p>
 		    
-		    <?php foreach($ingredients as $ingredient): ?>
-			    <span><?=$ingredient['quantity']?></span>
-			    <span><?=$ingredient['unit']?></span>
-			    <span><?=$ingredient['title']?></span>
-		    <?php endforeach ?>
+		    <div class="details">
+			    <?php foreach($each_recipe['ingredients'] as $ingredient): ?> 
+					 <ul> 
+						 <li><span><?=$ingredient['quantity']?> <?=$ingredient['unit']?> <?=$ingredient['title']?></span></li> 
+					 </ul> 
+				<?php endforeach ?>
+			</div>
 		  
 		  </div>
 		  	<h4>

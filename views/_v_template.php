@@ -50,7 +50,7 @@
 	<?php if(isset($content)) echo $content; ?>
 
 	<footer>
-		<img src="/images/foodshare.png" />
+		<img src="/images/foodshare-footer.png" />
 	</footer>
 
 	<?php if(isset($client_files_body)) echo $client_files_body; ?>

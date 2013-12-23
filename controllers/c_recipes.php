@@ -19,7 +19,7 @@ class recipes_controller extends base_controller {
 	    $this->template->content = View::instance("v_recipes_my_recipes");
 	    $this->template->title   = "My Recipes";
 
-	    # Query -- HELP --
+	    # Query 
 	    $q = "SELECT *
 	    		FROM        users, recipes, user_recipes
 	        	WHERE 		users.id = user_id
@@ -28,6 +28,15 @@ class recipes_controller extends base_controller {
 
 	    # Run the query, store the results in the variable $posts
 	    $my_recipes = DB::instance(DB_NAME)->select_rows($q);
+
+	    foreach ($my_recipes as $key => $recipes) {
+			$q = "SELECT recipes_ingredients.quantity, recipes_ingredients.unit, recipes_ingredients.title
+				FROM recipes_ingredients
+				JOIN ingredients
+				ON recipes_ingredients.ingredient_id = ingredients.ingredient_id	
+				WHERE recipes_ingredients.recipe_id =".$recipes["id"];
+			$my_recipes[$key]["ingredients"] = DB::instance(DB_NAME)->select_rows($q);
+		}
 
 	    # Build the query to figure out what connections does this user already have? 
 	    # I.e. who are they following
@@ -75,10 +84,6 @@ class recipes_controller extends base_controller {
 				WHERE recipes_ingredients.recipe_id =".$recipes["id"];
 			$all_recipes[$key]["ingredients"] = DB::instance(DB_NAME)->select_rows($q);
 		}
-
-
-
-
 
 	    /*# Query -- HELP --
 	    $q = "SELECT *

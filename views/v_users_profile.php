@@ -5,13 +5,6 @@
             <h2><?=$user->first_name;?>'s profile</h2>
                         
                 <form method='POST' enctype="multipart/form-data" action='/users/p_profile_edit'> 
-
-                <?php if($avatar): ?>
-                        <div class="avatar" style="background: url('<?=$user->avatar;?>') center center no-repeat;"></div>
-                <?php else: ?>
-                        <div class="avatar" style="background: url('/uploads/avatars/user_default.jpg') center center no-repeat;"></div>
-                <?php endif; ?>
-
 		                
 				<input type='text' name='first_name' placeholder='<?=$user->first_name;?>' value='<?=$user->first_name;?>'><br />
 				<input type='text' name='last_name' placeholder='<?=$user->last_name;?>' value='<?=$user->last_name;?>'><br />

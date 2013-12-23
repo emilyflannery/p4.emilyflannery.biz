@@ -8,16 +8,22 @@
 	<?php foreach($my_recipes as $my_recipe): ?>
 
 		<article>
+
+		<span class="show">+</span>
+		<span class="hide">-</span>
 		<h3><?=$my_recipe['title']?></h3>
 	    
 	    <div class="item">
 			<p><?=$my_recipe['description']?></p>
-		    <ul>
-		    	<li><span class="ingredient"><?=$my_recipe['quantity1']?></span> <?=$my_recipe['unit1']?> <?=$my_recipe['ingredient1']?></li>
-		    	<li><span class="ingredient"><?=$my_recipe['quantity2']?></span> <?=$my_recipe['unit2']?> <?=$my_recipe['ingredient2']?></li>
-		    	<li><span class="ingredient"><?=$my_recipe['quantity3']?></span> <?=$my_recipe['unit3']?> <?=$my_recipe['ingredient3']?></li>
-		    </ul>
-		  </div>
+		    
+		    <div class="details">
+			    <?php foreach($my_recipe['ingredients'] as $ingredient): ?> 
+					 <ul> 
+						 <li><span><?=$ingredient['quantity']?> <?=$ingredient['unit']?> <?=$ingredient['title']?></span></li> 
+					 </ul> 
+				<?php endforeach ?>
+			</div>
+		</div>
 
 	    <h4>
 	     	<?php if(isset($connections[$my_recipe['id']])): ?>

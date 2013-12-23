@@ -29,3 +29,21 @@
     	errorMessagePosition : 'top' // Instead of 'element' which is default
 	});
 
+
+	// Show/Hide Recipe Description
+	$(document).ready(function() {
+		$('.item').hide();
+		$('.hide').hide();
+		
+		$('.show').click(function () {
+			$(this).siblings(".item").slideDown();
+			$(this).hide();
+			$(this).siblings(".hide").show();
+		});
+
+		$('.hide').click(function () {
+			$(this).siblings(".item").slideUp();
+			$(this).hide();
+			$(this).siblings(".show").show();
+		});
+	});

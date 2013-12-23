@@ -41,13 +41,13 @@ VARIABLES
 /*--------------------------------------------------------------------
 GLOBAL
 ---------------------------------------------------------------------*/
-/* line 47, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 body {
   font-family: "Asap", sans-serif;
-  background: #efefef;
+  background: url("/images/bg.jpg") 0 0 repeat;
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 h2 {
   border-bottom: 1px solid black;
   font-family: "Playfair Display", serif;
@@ -60,9 +60,9 @@ h2 {
   text-transform: uppercase;
 }
 
-/* line 64, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 h3 {
-  color: black;
+  color: #2e322f;
   font-family: "Playfair Display", serif;
   font-size: 1em;
   font-weight: 700;
@@ -71,9 +71,9 @@ h3 {
   text-shadow: 1px 1px 2px white;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 h4 {
-  color: #5acd23;
+  color: #62876c;
   font-size: .66em;
   font-family: "Asap", Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -86,15 +86,15 @@ h4 {
   width: 100%;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 h4 a {
-  color: #5acd23;
+  color: #62876c;
   text-decoration: none;
 }
 
-/* line 93, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 h5 {
-  color: black;
+  color: #2e322f;
   font-family: "Asap", Helvetica, Arial, sans-serif;
   font-size: .8em;
   font-weight: 500;
@@ -105,24 +105,25 @@ h5 {
   width: auto;
 }
 
-/* line 105, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 h5 a {
   border: 1px solid #cecece;
-  color: black;
+  color: #2e322f;
   text-decoration: none;
   padding: 0.5em 0.8em;
 }
-/* line 111, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 h5 a:hover {
-  background: #5acd23;
+  border: 2px solid #62876c;
+  background: none;
 }
 
-/* line 116, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 a {
-  color: #23a3cd;
+  color: #62876c;
 }
 
-/* line 120, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 form {
   font-family: "Asap", sans-serif;
   font-size: 1em;
@@ -130,12 +131,12 @@ form {
   margin-top: 3em;
 }
 
-/* line 128, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 form input,
 form textarea {
   background: none;
   border: none;
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dotted #2e322f;
   color: #aaa;
   font-size: 1em;
   font-weight: 400;
@@ -144,25 +145,25 @@ form textarea {
   width: 100%;
 }
 
-/* line 140, ../sass/screen.scss */
+/* line 142, ../sass/screen.scss */
 form input:focus {
   outline: none;
 }
 
-/* line 144, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .left {
   float: left;
 }
 
-/* line 148, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .right {
   float: right;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 .button {
   border-radius: 5em;
-  background: #5acd23;
+  background: #62876c;
   border-radius: 5em;
   display: block;
   font-family: "Asap", serif;
@@ -175,10 +176,10 @@ form input:focus {
   height: 5em;
 }
 
-/* line 167, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 .button input {
   border: none;
-  color: black;
+  color: #f2f2ec;
   display: block;
   font-size: .8em;
   font-weight: 700;
@@ -192,10 +193,10 @@ form input:focus {
   text-transform: uppercase;
 }
 
-/* line 183, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 .button a {
   border: none;
-  color: black;
+  color: #f2f2ec;
   font-size: .8em;
   font-weight: 700;
   line-height: 1.6em;
@@ -208,7 +209,7 @@ form input:focus {
   width: 100%;
 }
 
-/* line 198, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 .avatar {
   background: url("/uploads/avatars/user_default.jpg") center center no-repeat;
   border-radius: 70px;
@@ -219,135 +220,137 @@ form input:focus {
   height: 70px;
 }
 
-/* line 208, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 #logo {
   display: block;
   height: auto;
   margin: 4em auto 0 auto;
   padding: 0.5em;
   text-align: center;
-  width: 40%;
+  width: 35%;
 }
 
-/* line 217, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
 nav {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 4em;
+  left: 2em;
 }
-/* line 222, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 nav ul {
   padding: 1em;
 }
-/* line 225, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 nav ul li {
   color: #efefef;
-  background: #111;
-  border-radius: 5em;
+  background: #62876c;
+  border: 4px solid #62876c;
   font-family: "Asap", serif;
   font-size: .7em;
   list-style: none;
   margin: .5em;
-  padding: .8em;
-  text-align: center;
+  padding: 8px;
+  text-align: left;
   text-transform: uppercase;
-  width: 5em;
-  height: 5em;
+  height: 1em;
 }
-/* line 239, ../sass/screen.scss */
+/* line 240, ../sass/screen.scss */
 nav ul li:hover {
-  background: #5acd23;
+  background: none;
+  border: 4px solid #62876c;
+  color: #62876c;
 }
-/* line 242, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 nav ul li:hover a {
-  color: #111;
+  color: #62876c;
+  font-weight: bold;
 }
-/* line 248, ../sass/screen.scss */
-nav ul li a:link,
-nav ul li a:visited {
+/* line 252, ../sass/screen.scss */
+nav ul li a,
+nav ul li a:link {
   color: #efefef;
-  line-height: 1.5em;
-  position: relative;
-  top: 1.7em;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
 }
-/* line 258, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 nav ul li a:hover {
-  color: #111;
+  color: #62876c;
+  font-weight: bold;
 }
 
-/* line 265, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .content {
-  background: #efefef;
-  color: #111;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  color: #2e322f;
   margin: 5em auto 0 auto;
-  padding-bottom: 6em;
+  padding: 3em 6em;
   width: 40%;
 }
 
 /*--------------------------------------------------------------------
 LOGIN
 ---------------------------------------------------------------------*/
-/* line 276, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 .content.login {
   margin-top: 2em;
 }
-/* line 279, ../sass/screen.scss */
+/* line 282, ../sass/screen.scss */
 .content.login .message {
   font-size: 1em;
   padding: 1em 0;
 }
 
-/* line 286, ../sass/screen.scss */
+/* line 289, ../sass/screen.scss */
 .error {
   color: red;
 }
 
-/* line 290, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .success {
-  color: #5acd23;
+  color: #62876c;
 }
 
 /*--------------------------------------------------------------------
 INDEX
 ---------------------------------------------------------------------*/
-/* line 298, ../sass/screen.scss */
+/* line 301, ../sass/screen.scss */
 .content.member,
 .content.visitor {
   margin: 2em auto;
 }
 
-/* line 302, ../sass/screen.scss */
+/* line 305, ../sass/screen.scss */
 .member h2 {
   border: none;
   font-family: "Playfair Display", Helvetica, Arial, sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 400;
   font-style: normal;
-  letter-spacing: 0em;
+  letter-spacing: .2em;
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  text-transform: none;
+  text-transform: lowercase;
   width: auto;
 }
 
-/* line 316, ../sass/screen.scss */
+/* line 319, ../sass/screen.scss */
 .visitor h2 {
   border-bottom: none;
   padding: 0;
 }
 
-/* line 321, ../sass/screen.scss */
+/* line 324, ../sass/screen.scss */
 #welcome {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   font-family: "Playfair Display", serif;
   font-style: italic;
-  font-size: 2.6em;
+  font-size: 2.3em;
   letter-spacing: 0;
+  line-height: 1.3em;
   margin: 1em auto 1em -10%;
   padding: 0.8em 0;
   text-align: center;
@@ -355,7 +358,7 @@ INDEX
   width: 120%;
 }
 
-/* line 334, ../sass/screen.scss */
+/* line 338, ../sass/screen.scss */
 .visitor #welcome {
   font-size: 1.5em;
   line-height: 1.5em;
@@ -364,7 +367,7 @@ INDEX
 /*--------------------------------------------------------------------
 PROMPTS
 ---------------------------------------------------------------------*/
-/* line 342, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 .prompt {
   text-align: center;
 }
@@ -372,11 +375,11 @@ PROMPTS
 /*--------------------------------------------------------------------
 PROFILE
 ---------------------------------------------------------------------*/
-/* line 351, ../sass/screen.scss */
+/* line 355, ../sass/screen.scss */
 .profile h3 {
   text-align: center;
 }
-/* line 355, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 .profile h4 {
   margin-top: 2em;
   text-align: center;
@@ -385,17 +388,43 @@ PROFILE
 /*--------------------------------------------------------------------
 RECIPES
 ---------------------------------------------------------------------*/
-/* line 369, ../sass/screen.scss */
+/* line 373, ../sass/screen.scss */
 .recipes h3 {
   text-align: center;
 }
-/* line 373, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
+.recipes .show, .recipes .hide {
+  background: #62876c;
+  border-radius: 5px;
+  color: #f2f2ec;
+  float: left;
+  font-family: "Asap", Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 0;
+  margin-top: 7px;
+  padding: 9px 5px 14px 5px;
+  position: absolute;
+}
+/* line 391, ../sass/screen.scss */
+.recipes #servings {
+  font-size: .8em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+/* line 396, ../sass/screen.scss */
+.recipes #servings input {
+  width: 3.5em;
+  margin-right: 1em;
+  padding: .5em;
+}
+/* line 403, ../sass/screen.scss */
 .recipes article {
   border-bottom: 1px dotted #cdcdcd;
   margin: 0;
   padding-bottom: 2em;
 }
-/* line 378, ../sass/screen.scss */
+/* line 408, ../sass/screen.scss */
 .recipes article .item {
   background: #fff;
   border: 1px dotted #cdcdcd;
@@ -404,38 +433,38 @@ RECIPES
   line-height: 1.3em;
   padding: 1em;
 }
-/* line 386, ../sass/screen.scss */
+/* line 416, ../sass/screen.scss */
 .recipes article .item p {
   font-family: "Asap", Helvetica, Arial, sans-serif;
   line-height: 1.6em;
   padding-bottom: .8em;
 }
-/* line 394, ../sass/screen.scss */
+/* line 424, ../sass/screen.scss */
 .recipes article .item ul li {
   font-size: 1.1em;
   line-height: 1.4em;
   list-style: none;
 }
-/* line 402, ../sass/screen.scss */
+/* line 432, ../sass/screen.scss */
 .recipes article h4 {
   text-align: center;
 }
-/* line 410, ../sass/screen.scss */
+/* line 440, ../sass/screen.scss */
 .recipes .meta {
   background: none;
   border: none;
   text-align: center;
 }
 
-/* line 419, ../sass/screen.scss */
+/* line 449, ../sass/screen.scss */
 footer {
-  background: #111;
+  background: #2e322f;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
 }
-/* line 426, ../sass/screen.scss */
+/* line 456, ../sass/screen.scss */
 footer img {
   height: auto;
   padding: 0.5em;
@@ -445,14 +474,14 @@ footer img {
 /*--------------------------------------------------------------------
 FOLLOW
 ---------------------------------------------------------------------*/
-/* line 438, ../sass/screen.scss */
+/* line 468, ../sass/screen.scss */
 .follow article {
   border-bottom: 1px dotted #cdcdcd;
   margin-bottom: 1em;
   padding-bottom: 1em;
   text-align: center;
 }
-/* line 445, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 .follow h4 {
   margin-top: .5em;
   text-align: center;
